@@ -1,0 +1,109 @@
+﻿@using Portfolio.Models
+
+<style>
+
+    .arrow-down {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 15px solid #26a69a;
+    margin: 0 auto;
+    }
+
+</style>
+
+
+
+
+<div class="row">
+
+    <div class="col s6" >
+        <div class="container" style="display: flex; flex-direction: column; align-items: center">
+
+            <h3> Edukacja </h3>
+
+            <JobCard JobDescription="mgrJob" IsLinkActive="false"></JobCard>
+
+            <div class="arrow-down"></div>
+
+            <JobCard JobDescription="inzJob" IsLinkActive="false"></JobCard>
+
+        </div>
+    </div>
+
+    <div class="col s6" >
+        <div class="container" style="display: flex; flex-direction: column; align-items: center">
+
+            <h3> Kariera </h3>
+
+
+            <JobCard JobDescription="ilotjob" IsLinkActive="false" IsLogoActive="true"></JobCard>
+
+            <div class="arrow-down"></div>
+
+            <JobCard JobDescription="sixRoads" IsLinkActive="false" IsLogoActive="true"></JobCard>
+
+
+            <div class="arrow-down"></div>
+
+            <JobCard JobDescription="aghRacing" IsLinkActive="true" IsLogoActive="true"></JobCard>
+
+
+        </div>
+    </div>
+
+</div>
+
+
+
+
+@code {
+    private string cardBackgroundColor = "blue-grey";
+
+
+    
+    private Job inzJob = new Job
+        {
+            Name = "Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie",
+            Time = "2020-2023",
+            Title = "Studia Inżynierskie",
+            Logo = "",
+            Description = "Mechanika i Buidowa Maszyn na wydziale Inżynierii Mechanicznej i Robotyki" };
+           
+    private Job mgrJob = new Job
+        {
+            Name = "Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie",
+            Time = "2020-2023",
+            Title = "Studia Magisterskie",
+            Logo = "",
+            Description = "Informatyka w Budowie Maszyn na wydziale Inżynierii Mechanicznej i Robotyki" };
+          
+    private Job aghRacing = new Job
+        {
+            Name = "AGH Racing",
+            Time = "2020-2023",
+            Title = "Projekt Manager",
+            Logo = "images/aghRacing-logo.png",
+            Description = "" };
+            
+    private Job ilotjob = new Job
+        {
+            Name = "Sieć Badawcza Łukasiewicz - Instytut Lotnictwa (GE Vernova)",
+            Time = "2023-obecnie",
+            Title = "Inżynier ds. Oprogramowania",
+            Logo = "images/Ilot-logo.jpg",
+            Description = "" };
+
+    private Job sixRoads = new Job
+        {
+            Name = "6ROADS",
+            Time = "2023-2024",
+            Title = "Python Developer",
+            Logo = "images/6ROADS-logo.png",
+            Description = ""
+        };
+    //Description = "Praca w 6ROADS obejmowała samodzielne stworzenie aplikacji automatyzującej oraz zarządzającej obliczeniami pozycji satelitów na niebie. \n Do stworzenia interface’u graficznego oraz logiki programu posłużył interpreter Python, natomiast do zarządzania danymi SQLite. \n Praca w systemie operacyjnym Linux" };
+
+
+}

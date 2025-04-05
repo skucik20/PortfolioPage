@@ -1,0 +1,15 @@
+﻿@page "/"
+@using Portfolio.Components.Shared
+@using Portfolio.Models
+
+
+<Introduction Name="@name" Title="@title"/>
+<AboutMe></AboutMe>
+<PortfolioView></PortfolioView>
+
+
+@code {
+    private string name = "Konrad Skut";
+    private string title = "Software Developer";
+
+}

@@ -1,0 +1,67 @@
+@using Portfolio.Models
+
+<div class="card @cardBackgroundColor darken-1" style="border-radius: 15px">
+    <div class="card-content white-text">
+        <div class="row">
+            <div class="col @col1">
+
+                <span class="card-title">@JobDescription.Name</span>
+                <p>
+                    @JobDescription.Title
+                </p>
+                <p>
+                    @JobDescription.Time
+                </p>
+                <p>
+                    @JobDescription.Description
+                </p>
+
+            </div>
+            @if (IsLogoActive == true)
+            {
+                <div class="col s6">
+
+                    <img src="@JobDescription.Logo" alt="" class="circle responsive-img" style="padding: 10px"> <!-- notice the "circle" class -->
+                </div>
+            }
+
+        </div>
+
+        @if(IsLinkActive == true)
+        {
+            <div class="card-action">
+                <a href="#">Szczegó³y</a>
+            </div>
+        }
+
+    </div>
+
+
+</div>
+
+
+
+@code {
+
+    private string cardBackgroundColor = "blue-grey";
+
+    private string col1 = "s6";
+
+    [Parameter]
+    public Job JobDescription { get; set; }
+
+    [Parameter]
+    public bool IsLinkActive { get; set; }
+
+    [Parameter]
+    public bool IsLogoActive { get; set; }
+
+    protected override void OnInitialized()
+    {
+        if(!IsLogoActive)
+        {
+            col1 = "12";
+        }
+    }
+
+}
